@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Tasks</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Cambia a tu backend en Render al desplegar -->
+  <script>window.API_URL="http://localhost:4000";</script>
+</head>
+<body>
+  <header class="container">
+    <h1>Student Tasks</h1>
+    <p class="muted">Gestión de tareas con Node + PostgreSQL</p>
+  </header>
+
+  <main class="container grid">
+    <div id="auth" class="col-span-2 grid" style="display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr))">
+      <section class="card">
+        <h2>Registro</h2>
+        <div class="form-row">
+          <input id="r_name" placeholder="Nombre" />
+          <input id="r_email" placeholder="Correo" />
+          <input id="r_pass" placeholder="Contraseña" type="password" />
+        </div>
+        <button id="btn_register" class="btn primary">Registrarme</button>
+      </section>
+
+      <section class="card">
+        <h2>Login</h2>
+        <div class="form-row">
+          <input id="l_email" placeholder="Correo" />
+          <input id="l_pass" placeholder="Contraseña" type="password" />
+        </div>
+        <button id="btn_login" class="btn secondary">Entrar</button>
+      </section>
+    </div>
+
+    <!-- Empieza oculta -->
+    <section id="app" class="card hidden col-span-2">
+      <div class="flex-between">
+        <h2>Mis tareas</h2>
+        <button id="btn_logout" class="btn danger light">Salir</button>
+      </div>
+      <div class="form-row">
+        <input id="t_title" placeholder="Título de la tarea" />
+        <input id="t_desc" placeholder="Descripción (opcional)" />
+        <button id="btn_add" class="btn primary">Agregar</button>
+      </div>
+      <ul id="tasks" class="list"></ul>
+    </section>
+  </main>
+
+  <footer class="container foot muted">Hecho para el laboratorio ✨</footer>
+  <script src="app.js"></script>
+</body>
+</html>
