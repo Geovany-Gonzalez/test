@@ -1,7 +1,4 @@
--- BD con relación N:M (users <-> tasks)
-CREATE DATABASE student_tasks_db;
-\connect student_tasks_db;
-
+-- SCHEMA PORTABLE (sirve en Render y local)
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
